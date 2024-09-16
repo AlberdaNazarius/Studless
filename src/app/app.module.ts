@@ -29,6 +29,7 @@ import { AuthExpiredInterceptorService } from './shared/services/auth-expired-in
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
+import { AdminService } from './shared/services/admin.service';
 
 @NgModule({
   declarations: [
@@ -50,8 +51,8 @@ import { LoginComponent } from './auth/login/login.component';
     SliceAndDotsPipe,
     PaginatorComponent,
     SignUpComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -63,6 +64,8 @@ import { LoginComponent } from './auth/login/login.component';
   providers: [
     QuestionService,
     UserService,
+    AdminService,
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
